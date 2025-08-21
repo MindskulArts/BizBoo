@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Sale - Gestiona tus Ventas</title>
+    <title>BizBoo - Your Bizness Booster</title>
     <style>
         * {
             margin: 0;
@@ -75,10 +75,10 @@
         }
 
         .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            display: flex;
+            justify-content: center;
             align-items: center;
+            text-align: center;
             z-index: 2;
         }
 
@@ -352,7 +352,6 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero-content {
-                grid-template-columns: 1fr;
                 text-align: center;
             }
 
@@ -379,7 +378,7 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">New Sale</div>
+            <div class="logo">BizBoo</div>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#funciones">Funciones</a></li>
@@ -392,10 +391,12 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">New Sale</h1>
+                    <h1 class="hero-title">BizBoo</h1>
+                    <h2 style="font-size: 1.5rem; margin: -10px 0 20px 0; opacity: 0.9; font-weight: 400;">Your Bizness Booster</h2>
                     <p class="hero-subtitle">
                         Olvídate de la libreta. Controla tus ventas y clientes desde tu celular.
-                        Registra ventas en segundos, controla quién te debe cuánto, y comparte tus productos fácilmente.
+                        Registra ventas en segundos, controla quién te debe cuánto, y comparte tus productos fácilmente. 
+                        <strong>Totalmente gratis.</strong>
                     </p>
                     <div class="cta-buttons">
                         <a href="#descargar" class="btn btn-primary">Descarga y vende más</a>
@@ -424,38 +425,38 @@
                     </p>
                 </div>
                 <div class="feature-card">
-                    <span class="feature-icon">📊</span>
-                    <h3 class="feature-title">Control de Inventario</h3>
-                    <p class="feature-desc">
-                        Gestiona tu inventario y mantén un control preciso de tus productos.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">💰</span>
-                    <h3 class="feature-title">Seguimiento de Pagos</h3>
-                    <p class="feature-desc">
-                        Registra pagos, calcula cambios y mantén un balance actualizado.
-                    </p>
-                </div>
-                <div class="feature-card">
                     <span class="feature-icon">👥</span>
-                    <h3 class="feature-title">Gestión de Clientes</h3>
+                    <h3 class="feature-title">Gestión de Confianza</h3>
                     <p class="feature-desc">
-                        Organiza tu base de clientes y mantén un historial de compras.
+                        Ve el historial y balance de cada cliente antes de fiar. Decide con información real.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">💳</span>
+                    <h3 class="feature-title">Control de Adeudos</h3>
+                    <p class="feature-desc">
+                        Nunca más pierdas el control de quién te debe. Balance actualizado en tiempo real de cada cliente.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🏪</span>
+                    <h3 class="feature-title">Inventario Inteligente</h3>
+                    <p class="feature-desc">
+                        Agrega la información adicional como códigos de barras, fotos, etc, cuando tengas tiempo.
                     </p>
                 </div>
                 <div class="feature-card">
                     <span class="feature-icon">📈</span>
-                    <h3 class="feature-title">Reportes y Analytics</h3>
+                    <h3 class="feature-title">Resumen del Negocio</h3>
                     <p class="feature-desc">
-                        Visualiza el crecimiento de tu negocio con reportes detallados.
+                        Visualiza indicadores clave de tu negocio con un resumen claro y fácil de entender.
                     </p>
                 </div>
                 <div class="feature-card">
-                    <span class="feature-icon">🔄</span>
-                    <h3 class="feature-title">Sincronización</h3>
+                    <span class="feature-icon">📤</span>
+                    <h3 class="feature-title">Comparte tus Productos</h3>
                     <p class="feature-desc">
-                        Mantén tus datos sincronizados en todos tus dispositivos.
+                        Exporta productos seleccionados a PDF y compártelos fácilmente para vender online.
                     </p>
                 </div>
             </div>
@@ -464,9 +465,9 @@
 
     <section class="download" id="descargar">
         <div class="container">
-            <h2 class="download-title">Descarga New Sale</h2>
+            <h2 class="download-title">Descarga BizBoo Gratis</h2>
             <p class="download-subtitle">
-                Disponible para iOS y Android. Comienza a gestionar tus ventas hoy mismo.
+                Disponible para iOS y Android. Una app completamente gratuita para gestionar tus ventas.
             </p>
             <div class="store-buttons">
                 <a href="#" class="store-btn">
@@ -490,7 +491,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 New Sale. Todos los derechos reservados.</p>
+                <p>&copy; 2024 BizBoo. Todos los derechos reservados.</p>
                 <p>Desarrollado por MindskulArts</p>
             </div>
         </div>
