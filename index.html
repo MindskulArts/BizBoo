@@ -25,8 +25,6 @@
             padding: 0 20px;
         }
 
-
-
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -148,39 +146,11 @@
         }
 
         .bizboo-1 { 
-            width: 80px; 
-            height: 80px; 
-            top: 20%; 
-            left: 10%; 
-            animation-delay: 0s; 
-        }
-        .bizboo-2 { 
             width: 100px; 
             height: 100px; 
-            top: 60%; 
-            right: 10%; 
-            animation-delay: 2s; 
-        }
-        .bizboo-3 { 
-            width: 60px; 
-            height: 60px; 
-            top: 80%; 
-            left: 20%; 
-            animation-delay: 4s; 
-        }
-        .bizboo-4 { 
-            width: 70px; 
-            height: 70px; 
             top: 30%; 
-            right: 25%; 
-            animation-delay: 1s; 
-        }
-        .bizboo-5 { 
-            width: 90px; 
-            height: 90px; 
-            top: 70%; 
-            left: 60%; 
-            animation-delay: 3s; 
+            right: 15%; 
+            animation-delay: 0s; 
         }
 
         /* Features Section */
@@ -332,8 +302,60 @@
 
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-20px) rotate(120deg); }
-            66% { transform: translateY(-10px) rotate(240deg); }
+            33% { transform: translateY(-20px) rotate(5deg); }
+            66% { transform: translateY(-10px) rotate(-3deg); }
+        }
+
+        /* Animaciones para los pelos */
+        @keyframes hairSway1 {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        @keyframes hairSway2 {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-2deg); }
+        }
+
+        @keyframes hairSway3 {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(4deg); }
+        }
+
+        .hair-group-1 {
+            animation: hairSway1 3s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        .hair-group-2 {
+            animation: hairSway2 3.5s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        .hair-group-3 {
+            animation: hairSway3 2.8s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        /* Animaciones para los brazitos */
+        @keyframes armSwayLeft {
+            0%, 100% { transform: rotate(-10deg); }
+            50% { transform: rotate(15deg); }
+        }
+
+        @keyframes armSwayRight {
+            0%, 100% { transform: rotate(10deg); }
+            50% { transform: rotate(-15deg); }
+        }
+
+        .left-arm {
+            animation: armSwayLeft 4s ease-in-out infinite;
+            transform-origin: 45px 85px; /* punto de pivote en el "hombro" */
+        }
+
+        .right-arm {
+            animation: armSwayRight 3.7s ease-in-out infinite;
+            transform-origin: 115px 85px; /* punto de pivote en el "hombro" */
         }
 
         .scroll-animate {
@@ -366,7 +388,6 @@
 </head>
 <body>
 
-
     <section class="hero" id="inicio">
         <div class="container">
             <div class="hero-content">
@@ -387,192 +408,106 @@
         </div>
         
         <div class="floating-elements">
-            <!-- BizBoo 1 - Básico -->
-            <div class="floating-bizboo bizboo-1">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Cuerpo peludo -->
-                    <circle cx="50" cy="50" r="35" fill="#1a1a1a"/>
-                    <!-- Pelitos alrededor -->
-                    <g stroke="#333" stroke-width="2" fill="none" opacity="0.7">
-                        <line x1="15" y1="25" x2="10" y2="20"/>
-                        <line x1="20" y1="15" x2="18" y2="10"/>
-                        <line x1="30" y1="12" x2="30" y2="7"/>
-                        <line x1="40" y1="10" x2="42" y2="5"/>
-                        <line x1="50" y1="10" x2="50" y2="5"/>
-                        <line x1="60" y1="10" x2="58" y2="5"/>
-                        <line x1="70" y1="12" x2="70" y2="7"/>
-                        <line x1="80" y1="15" x2="82" y2="10"/>
-                        <line x1="85" y1="25" x2="90" y2="20"/>
-                        <line x1="88" y1="35" x2="93" y2="35"/>
-                        <line x1="88" y1="45" x2="93" y2="45"/>
-                        <line x1="88" y1="55" x2="93" y2="55"/>
-                        <line x1="85" y1="65" x2="90" y2="70"/>
-                        <line x1="80" y1="75" x2="82" y2="80"/>
-                        <line x1="70" y1="78" x2="70" y2="83"/>
-                        <line x1="60" y1="80" x2="58" y2="85"/>
-                        <line x1="50" y1="80" x2="50" y2="85"/>
-                        <line x1="40" y1="80" x2="42" y2="85"/>
-                        <line x1="30" y1="78" x2="30" y2="83"/>
-                        <line x1="20" y1="75" x2="18" y2="80"/>
-                        <line x1="15" y1="65" x2="10" y2="70"/>
-                        <line x1="12" y1="55" x2="7" y2="55"/>
-                        <line x1="12" y1="45" x2="7" y2="45"/>
-                        <line x1="12" y1="35" x2="7" y2="35"/>
+            <!-- BizBoo mejorado basado en el SVG proporcionado -->
+            <div class="floating-bizboo bizboo-1" id="bizbooCursor">
+                <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" style="transform: scale(0.8);">
+                    <!-- Cuerpo principal negro -->
+                    <circle cx="80" cy="80" r="55" fill="#000000"/>
+                    
+                    <!-- Brazitos tipo criaturas de hollín -->
+                    <g class="left-arm">
+                        <!-- Brazo izquierdo -->
+                        <line x1="45" y1="85" x2="25" y2="105" stroke="#000000" stroke-width="4" stroke-linecap="round"/>
+                        <!-- Antebrazo izquierdo -->
+                        <line x1="25" y1="105" x2="15" y2="125" stroke="#000000" stroke-width="3.5" stroke-linecap="round"/>
+                        <!-- Manita izquierda -->
+                        <circle cx="15" cy="125" r="3" fill="#000000"/>
+                        <!-- Deditos izquierda -->
+                        <line x1="12" y1="125" x2="8" y2="127" stroke="#000000" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="15" y1="128" x2="13" y2="132" stroke="#000000" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="18" y1="125" x2="22" y2="127" stroke="#000000" stroke-width="1.5" stroke-linecap="round"/>
                     </g>
-                    <!-- Ojos -->
-                    <circle cx="40" cy="45" r="8" fill="white"/>
-                    <circle cx="60" cy="45" r="8" fill="white"/>
-                    <circle cx="40" cy="45" r="4" fill="black"/>
-                    <circle cx="60" cy="45" r="4" fill="black"/>
-                    <!-- Brillo en los ojos -->
-                    <circle cx="42" cy="43" r="1.5" fill="white"/>
-                    <circle cx="62" cy="43" r="1.5" fill="white"/>
-                </svg>
-            </div>
-
-            <!-- BizBoo 2 - Con expresión diferente -->
-            <div class="floating-bizboo bizboo-2">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="35" fill="#1a1a1a"/>
-                    <g stroke="#333" stroke-width="2" fill="none" opacity="0.7">
-                        <line x1="15" y1="25" x2="10" y2="20"/>
-                        <line x1="20" y1="15" x2="18" y2="10"/>
-                        <line x1="30" y1="12" x2="30" y2="7"/>
-                        <line x1="40" y1="10" x2="42" y2="5"/>
-                        <line x1="50" y1="10" x2="50" y2="5"/>
-                        <line x1="60" y1="10" x2="58" y2="5"/>
-                        <line x1="70" y1="12" x2="70" y2="7"/>
-                        <line x1="80" y1="15" x2="82" y2="10"/>
-                        <line x1="85" y1="25" x2="90" y2="20"/>
-                        <line x1="88" y1="35" x2="93" y2="35"/>
-                        <line x1="88" y1="55" x2="93" y2="55"/>
-                        <line x1="85" y1="65" x2="90" y2="70"/>
-                        <line x1="80" y1="75" x2="82" y2="80"/>
-                        <line x1="70" y1="78" x2="70" y2="83"/>
-                        <line x1="50" y1="80" x2="50" y2="85"/>
-                        <line x1="30" y1="78" x2="30" y2="83"/>
-                        <line x1="20" y1="75" x2="18" y2="80"/>
-                        <line x1="15" y1="65" x2="10" y2="70"/>
-                        <line x1="12" y1="45" x2="7" y2="45"/>
-                        <line x1="12" y1="35" x2="7" y2="35"/>
+                    
+                    <g class="right-arm">
+                        <!-- Brazo derecho -->
+                        <line x1="115" y1="85" x2="135" y2="105" stroke="#000000" stroke-width="4" stroke-linecap="round"/>
+                        <!-- Antebrazo derecho -->
+                        <line x1="135" y1="105" x2="145" y2="125" stroke="#000000" stroke-width="3.5" stroke-linecap="round"/>
+                        <!-- Manita derecha -->
+                        <circle cx="145" cy="125" r="3" fill="#000000"/>
+                        <!-- Deditos derecha -->
+                        <line x1="142" y1="125" x2="138" y2="127" stroke="#000000" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="145" y1="128" x2="147" y2="132" stroke="#000000" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="148" y1="125" x2="152" y2="127" stroke="#000000" stroke-width="1.5" stroke-linecap="round"/>
                     </g>
-                    <!-- Ojos más grandes -->
-                    <circle cx="38" cy="45" r="10" fill="white"/>
-                    <circle cx="62" cy="45" r="10" fill="white"/>
-                    <circle cx="38" cy="45" r="5" fill="black"/>
-                    <circle cx="62" cy="45" r="5" fill="black"/>
-                    <circle cx="40" cy="43" r="2" fill="white"/>
-                    <circle cx="64" cy="43" r="2" fill="white"/>
-                </svg>
-            </div>
-
-            <!-- BizBoo 3 - Pequeño y tímido -->
-            <div class="floating-bizboo bizboo-3">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="35" fill="#1a1a1a"/>
-                    <g stroke="#333" stroke-width="1.5" fill="none" opacity="0.6">
-                        <line x1="20" y1="20" x2="15" y2="15"/>
-                        <line x1="35" y1="15" x2="35" y2="10"/>
-                        <line x1="50" y1="15" x2="50" y2="10"/>
-                        <line x1="65" y1="15" x2="65" y2="10"/>
-                        <line x1="80" y1="20" x2="85" y2="15"/>
-                        <line x1="85" y1="35" x2="90" y2="35"/>
-                        <line x1="85" y1="50" x2="90" y2="50"/>
-                        <line x1="85" y1="65" x2="90" y2="65"/>
-                        <line x1="80" y1="80" x2="85" y2="85"/>
-                        <line x1="65" y1="85" x2="65" y2="90"/>
-                        <line x1="50" y1="85" x2="50" y2="90"/>
-                        <line x1="35" y1="85" x2="35" y2="90"/>
-                        <line x1="20" y1="80" x2="15" y2="85"/>
-                        <line x1="15" y1="65" x2="10" y2="65"/>
-                        <line x1="15" y1="50" x2="10" y2="50"/>
-                        <line x1="15" y1="35" x2="10" y2="35"/>
+                    
+                    <!-- Pelos radiantes alrededor del cuerpo - Grupo 1 -->
+                    <g stroke="#000000" stroke-width="2" fill="none" stroke-linecap="round" class="hair-group-1">
+                        <line x1="80" y1="25" x2="80" y2="15"/>
+                        <line x1="64" y1="28" x2="60" y2="19"/>
+                        <line x1="96" y1="28" x2="100" y2="19"/>
+                        <line x1="48" y1="37" x2="40" y2="30"/>
+                        <line x1="112" y1="37" x2="120" y2="30"/>
+                        <line x1="30" y1="58" x2="19" y2="55"/>
+                        <line x1="130" y1="58" x2="141" y2="55"/>
+                        <line x1="25" y1="82" x2="13" y2="82"/>
+                        <line x1="135" y1="82" x2="147" y2="82"/>
+                        <line x1="48" y1="127" x2="40" y2="134"/>
+                        <line x1="112" y1="127" x2="120" y2="134"/>
+                        <line x1="80" y1="139" x2="80" y2="149"/>
                     </g>
-                    <!-- Ojos pequeños y tímidos -->
-                    <circle cx="42" cy="48" r="6" fill="white"/>
-                    <circle cx="58" cy="48" r="6" fill="white"/>
-                    <circle cx="42" cy="48" r="3" fill="black"/>
-                    <circle cx="58" cy="48" r="3" fill="black"/>
-                    <circle cx="43" cy="47" r="1" fill="white"/>
-                    <circle cx="59" cy="47" r="1" fill="white"/>
-                </svg>
-            </div>
-
-            <!-- BizBoo 4 - Curioso -->
-            <div class="floating-bizboo bizboo-4">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="35" fill="#1a1a1a"/>
-                    <g stroke="#333" stroke-width="2" fill="none" opacity="0.7">
-                        <line x1="18" y1="22" x2="13" y2="17"/>
-                        <line x1="25" y1="15" x2="23" y2="10"/>
-                        <line x1="35" y1="12" x2="35" y2="7"/>
-                        <line x1="45" y1="10" x2="47" y2="5"/>
-                        <line x1="55" y1="10" x2="53" y2="5"/>
-                        <line x1="65" y1="12" x2="65" y2="7"/>
-                        <line x1="75" y1="15" x2="77" y2="10"/>
-                        <line x1="82" y1="22" x2="87" y2="17"/>
-                        <line x1="88" y1="32" x2="93" y2="32"/>
-                        <line x1="88" y1="42" x2="93" y2="42"/>
-                        <line x1="88" y1="58" x2="93" y2="58"/>
-                        <line x1="82" y1="78" x2="87" y2="83"/>
-                        <line x1="65" y1="88" x2="65" y2="93"/>
-                        <line x1="50" y1="85" x2="50" y2="90"/>
-                        <line x1="35" y1="88" x2="35" y2="93"/>
-                        <line x1="25" y1="85" x2="23" y2="90"/>
-                        <line x1="18" y1="78" x2="13" y2="83"/>
-                        <line x1="12" y1="58" x2="7" y2="58"/>
-                        <line x1="12" y1="42" x2="7" y2="42"/>
-                        <line x1="12" y1="32" x2="7" y2="32"/>
+                    
+                    <!-- Pelos radiantes alrededor del cuerpo - Grupo 2 -->
+                    <g stroke="#000000" stroke-width="2" fill="none" stroke-linecap="round" class="hair-group-2">
+                        <line x1="72" y1="26" x2="70" y2="16"/>
+                        <line x1="88" y1="26" x2="90" y2="16"/>
+                        <line x1="56" y1="32" x2="50" y2="24"/>
+                        <line x1="104" y1="32" x2="110" y2="24"/>
+                        <line x1="41" y1="43" x2="32" y2="37"/>
+                        <line x1="119" y1="43" x2="128" y2="37"/>
+                        <line x1="27" y1="66" x2="15" y2="64"/>
+                        <line x1="133" y1="66" x2="145" y2="64"/>
+                        <line x1="25" y1="90" x2="13" y2="91"/>
+                        <line x1="135" y1="90" x2="147" y2="91"/>
+                        <line x1="30" y1="106" x2="19" y2="109"/>
+                        <line x1="130" y1="106" x2="141" y2="109"/>
+                        <line x1="72" y1="138" x2="70" y2="148"/>
+                        <line x1="88" y1="138" x2="90" y2="148"/>
                     </g>
-                    <!-- Ojos curiosos -->
-                    <circle cx="35" cy="42" r="9" fill="white"/>
-                    <circle cx="65" cy="42" r="9" fill="white"/>
-                    <circle cx="37" cy="42" r="4" fill="black"/>
-                    <circle cx="67" cy="42" r="4" fill="black"/>
-                    <circle cx="38" cy="40" r="1.5" fill="white"/>
-                    <circle cx="68" cy="40" r="1.5" fill="white"/>
-                </svg>
-            </div>
-
-            <!-- BizBoo 5 - Trabajador -->
-            <div class="floating-bizboo bizboo-5">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="35" fill="#1a1a1a"/>
-                    <g stroke="#333" stroke-width="2" fill="none" opacity="0.8">
-                        <line x1="16" y1="24" x2="11" y2="19"/>
-                        <line x1="22" y1="16" x2="20" y2="11"/>
-                        <line x1="32" y1="13" x2="32" y2="8"/>
-                        <line x1="42" y1="11" x2="44" y2="6"/>
-                        <line x1="50" y1="11" x2="50" y2="6"/>
-                        <line x1="58" y1="11" x2="56" y2="6"/>
-                        <line x1="68" y1="13" x2="68" y2="8"/>
-                        <line x1="78" y1="16" x2="80" y2="11"/>
-                        <line x1="84" y1="24" x2="89" y2="19"/>
-                        <line x1="87" y1="34" x2="92" y2="34"/>
-                        <line x1="87" y1="44" x2="92" y2="44"/>
-                        <line x1="87" y1="56" x2="92" y2="56"/>
-                        <line x1="87" y1="66" x2="92" y2="66"/>
-                        <line x1="84" y1="76" x2="89" y2="81"/>
-                        <line x1="78" y1="84" x2="80" y2="89"/>
-                        <line x1="68" y1="87" x2="68" y2="92"/>
-                        <line x1="58" y1="89" x2="56" y2="94"/>
-                        <line x1="50" y1="89" x2="50" y2="94"/>
-                        <line x1="42" y1="89" x2="44" y2="94"/>
-                        <line x1="32" y1="87" x2="32" y2="92"/>
-                        <line x1="22" y1="84" x2="20" y2="89"/>
-                        <line x1="16" y1="76" x2="11" y2="81"/>
-                        <line x1="13" y1="66" x2="8" y2="66"/>
-                        <line x1="13" y1="56" x2="8" y2="56"/>
-                        <line x1="13" y1="44" x2="8" y2="44"/>
-                        <line x1="13" y1="34" x2="8" y2="34"/>
+                    
+                    <!-- Pelos radiantes alrededor del cuerpo - Grupo 3 -->
+                    <g stroke="#000000" stroke-width="2" fill="none" stroke-linecap="round" class="hair-group-3">
+                        <line x1="35" y1="50" x2="25" y2="46"/>
+                        <line x1="125" y1="50" x2="135" y2="46"/>
+                        <line x1="25" y1="74" x2="13" y2="73"/>
+                        <line x1="135" y1="74" x2="147" y2="73"/>
+                        <line x1="27" y1="98" x2="15" y2="100"/>
+                        <line x1="133" y1="98" x2="145" y2="100"/>
+                        <line x1="35" y1="114" x2="25" y2="118"/>
+                        <line x1="125" y1="114" x2="135" y2="118"/>
+                        <line x1="41" y1="121" x2="32" y2="127"/>
+                        <line x1="119" y1="121" x2="128" y2="127"/>
+                        <line x1="56" y1="132" x2="50" y2="140"/>
+                        <line x1="104" y1="132" x2="110" y2="140"/>
+                        <line x1="64" y1="136" x2="60" y2="145"/>
+                        <line x1="96" y1="136" x2="100" y2="145"/>
                     </g>
-                    <!-- Ojos determinados -->
-                    <circle cx="40" cy="44" r="8" fill="white"/>
-                    <circle cx="60" cy="44" r="8" fill="white"/>
-                    <circle cx="40" cy="44" r="4" fill="black"/>
-                    <circle cx="60" cy="44" r="4" fill="black"/>
-                    <circle cx="41" cy="42" r="1.5" fill="white"/>
-                    <circle cx="61" cy="42" r="1.5" fill="white"/>
+                    
+                    <!-- Ojos blancos grandes -->
+                    <circle cx="60" cy="70" r="18" fill="white"/>
+                    <circle cx="100" cy="70" r="18" fill="white"/>
+                    
+                    <!-- Pupilas negras ovaladas que seguirán el cursor -->
+                    <ellipse id="leftPupil" cx="60" cy="73" rx="9" ry="12" fill="black"/>
+                    <ellipse id="rightPupil" cx="100" cy="73" rx="9" ry="12" fill="black"/>
+                    
+                    <!-- Brillos en los ojos que se moverán con las pupilas -->
+                    <circle id="leftHighlight" cx="63" cy="68" r="3" fill="white"/>
+                    <circle id="rightHighlight" cx="103" cy="68" r="3" fill="white"/>
+                    
+                    <!-- Pequeños brillos adicionales -->
+                    <circle id="leftSmallHighlight" cx="58" cy="70" r="1.5" fill="white"/>
+                    <circle id="rightSmallHighlight" cx="98" cy="70" r="1.5" fill="white"/>
                 </svg>
             </div>
         </div>
@@ -663,6 +598,112 @@
     </footer>
 
     <script>
+        // Eye tracking functionality
+        function updateEyePosition(mouseX, mouseY) {
+            const bizboo = document.getElementById('bizbooCursor');
+            if (!bizboo) return;
+
+            const rect = bizboo.getBoundingClientRect();
+            const bizbooX = rect.left + rect.width / 2;
+            const bizbooY = rect.top + rect.height / 2;
+
+            // Calcular el ángulo y distancia desde BizBoo al cursor
+            const angle = Math.atan2(mouseY - bizbooY, mouseX - bizbooX);
+            const distance = Math.min(8, Math.sqrt(Math.pow(mouseX - bizbooX, 2) + Math.pow(mouseY - bizbooY, 2)) / 30);
+
+            // Posiciones base de los ojos (relativas al viewBox)
+            const leftEyeBaseX = 60;
+            const leftEyeBaseY = 73;
+            const rightEyeBaseX = 100;
+            const rightEyeBaseY = 73;
+
+            // Calcular nuevas posiciones de las pupilas
+            const leftPupilX = leftEyeBaseX + Math.cos(angle) * distance;
+            const leftPupilY = leftEyeBaseY + Math.sin(angle) * distance;
+            const rightPupilX = rightEyeBaseX + Math.cos(angle) * distance;
+            const rightPupilY = rightEyeBaseY + Math.sin(angle) * distance;
+
+            // Actualizar pupilas
+            const leftPupil = document.getElementById('leftPupil');
+            const rightPupil = document.getElementById('rightPupil');
+            const leftHighlight = document.getElementById('leftHighlight');
+            const rightHighlight = document.getElementById('rightHighlight');
+            const leftSmallHighlight = document.getElementById('leftSmallHighlight');
+            const rightSmallHighlight = document.getElementById('rightSmallHighlight');
+
+            if (leftPupil && rightPupil) {
+                leftPupil.setAttribute('cx', leftPupilX);
+                leftPupil.setAttribute('cy', leftPupilY);
+                rightPupil.setAttribute('cx', rightPupilX);
+                rightPupil.setAttribute('cy', rightPupilY);
+
+                // Mover los brillos con las pupilas
+                if (leftHighlight && rightHighlight) {
+                    leftHighlight.setAttribute('cx', leftPupilX + 3);
+                    leftHighlight.setAttribute('cy', leftPupilY - 5);
+                    rightHighlight.setAttribute('cx', rightPupilX + 3);
+                    rightHighlight.setAttribute('cy', rightPupilY - 5);
+                }
+
+                if (leftSmallHighlight && rightSmallHighlight) {
+                    leftSmallHighlight.setAttribute('cx', leftPupilX - 2);
+                    leftSmallHighlight.setAttribute('cy', leftPupilY - 3);
+                    rightSmallHighlight.setAttribute('cx', rightPupilX - 2);
+                    rightSmallHighlight.setAttribute('cy', rightPupilY - 3);
+                }
+            }
+
+            // Actualizar posición de los brazos hacia el cursor
+            updateArmPositions(angle, mouseX, mouseY, bizbooX, bizbooY);
+        }
+
+        // Función para mover los brazos hacia el cursor
+        function updateArmPositions(angle, mouseX, mouseY, bizbooX, bizbooY) {
+            const leftArm = document.querySelector('.left-arm');
+            const rightArm = document.querySelector('.right-arm');
+            
+            if (!leftArm || !rightArm) return;
+
+            // Calcular la distancia del cursor a BizBoo
+            const distanceToCursor = Math.sqrt(Math.pow(mouseX - bizbooX, 2) + Math.pow(mouseY - bizbooY, 2));
+            
+            // Factor de "deseo de abrazo" - más cerca = más ganas de abrazo
+            const hugeFactor = Math.min(1, Math.max(0, (300 - distanceToCursor) / 300));
+            
+            // Convertir ángulo a grados
+            const angleDeg = angle * (180 / Math.PI);
+            
+            // Calcular rotaciones para cada brazo basadas en la posición del cursor
+            let leftArmRotation, rightArmRotation;
+            
+            if (mouseX < bizbooX) {
+                // Cursor está a la izquierda - brazo izquierdo se extiende más
+                leftArmRotation = -30 + (angleDeg + 90) * 0.3 * hugeFactor;
+                rightArmRotation = 10 + (angleDeg - 45) * 0.2 * hugeFactor;
+            } else {
+                // Cursor está a la derecha - brazo derecho se extiende más  
+                leftArmRotation = -10 + (angleDeg + 45) * 0.2 * hugeFactor;
+                rightArmRotation = 30 + (angleDeg - 90) * 0.3 * hugeFactor;
+            }
+            
+            // Si el cursor está muy cerca, ambos brazos se abren para el abrazo
+            if (distanceToCursor < 150) {
+                leftArmRotation = -40 + (angleDeg * 0.1);
+                rightArmRotation = 40 + (angleDeg * 0.1);
+            }
+            
+            // Aplicar las rotaciones con transición suave
+            leftArm.style.transform = `rotate(${leftArmRotation}deg)`;
+            rightArm.style.transform = `rotate(${rightArmRotation}deg)`;
+            leftArm.style.transition = 'transform 0.3s ease-out';
+            rightArm.style.transition = 'transform 0.3s ease-out';
+        }
+
+        // Event listener para seguimiento del mouse
+        document.addEventListener('mousemove', (e) => {
+            updateEyePosition(e.clientX, e.clientY);
+        });
+
         // Scroll animations
         function animateOnScroll() {
             const elements = document.querySelectorAll('.section-title, .feature-card, .download-title, .download-subtitle, .store-btn');
